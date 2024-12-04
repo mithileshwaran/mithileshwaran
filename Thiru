@@ -1,0 +1,91 @@
+import java.io.*;
+import java.net.*;
+
+public class Server {
+    public static void main(String[] args) {
+        try {
+            // Create a server socket that listens on port 1234
+            ServerSocket serverSocket = new ServerSocket(1234);
+            System.out.println("Server is listening on port 1234...");
+            
+            // Accept a client connection
+            Socket socket = serverSocket.accept();
+            System.out.println("Client connected.");
+
+            // Get input stream to read data from client
+            BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            
+            // Get output stream to send data to client
+            PrintWriter output = new PrintWriter(socket.getOutputStream(), true);
+
+            String message;
+            
+            // Read client messages and respond
+            while ((message = input.readLine()) != null) {
+                System.out.println("Received from client: " + message);
+                output.println("Server Response: " + message.toUpperCase()); // Respond with uppercase message
+            }
+            
+            // Close resources
+            input.close();
+            output.close();
+            socket.close();
+            serverSocket.close();
+            System.out.println("Server closed.");
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+import java.io.*;
+import java.net.*;
+
+public class Client {
+    public static void main(String[] args) {
+        try {
+            // Connect to the server on localhost and port 1234
+            Socket socket = new Socket("localhost", 1234);
+            System.out.println("Connected to server.");
+
+            // Get output stream to send data to server
+            PrintWriter output = new PrintWriter(socket.getOutputStream(), true);
+            
+            // Get input stream to read data from server
+            BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            
+            // Create a BufferedReader to read user input from the console
+            BufferedReader userInput = new BufferedReader(new InputStreamReader(System.in));
+
+            String message;
+            String response;
+            
+            // Send messages to the server and receive responses
+            while (true) {
+                System.out.print("Enter message to send to server: ");
+                message = userInput.readLine();
+
+                if (message.equalsIgnoreCase("exit")) {
+                    break; // Exit the loop if the user types "exit"
+                }
+
+                // Send the message to the server
+                output.println(message);
+
+                // Read the server's response
+                response = input.readLine();
+                System.out.println("Server Response: " + response);
+            }
+            
+            // Close resources
+            userInput.close();
+            input.close();
+            output.close();
+            socket.close();
+            System.out.println("Connection closed.");
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
