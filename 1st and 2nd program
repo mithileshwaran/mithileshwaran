@@ -1,0 +1,93 @@
+
+
+#include <stdio.h>
+
+#include <ctype.h>
+
+void analyze(char *code) {
+
+ char *keywords[] = {"if", "else", "while", "for", "return"};
+
+ char buffer[50];
+
+ int i = 0, j = 0;
+
+ while (code[i] != '\0') {
+
+ if (isspace(code[i])) {
+
+ i++;
+
+ continue;
+
+ }
+
+ if (isalpha(code[i])) {
+
+ // Collect keyword or identifier
+
+ j = 0;
+
+ while (isalnum(code[i])) buffer[j++] = code[i++];
+
+ buffer[j] = '\0';
+
+ int isKeyword = 0;
+
+ for (int k = 0; k < 5; k++) {
+
+ if (strcmp(buffer, keywords[k]) == 0) {
+
+ printf("Keyword: %s\n", buffer);
+
+ isKeyword = 1;
+
+ break;
+
+ }
+
+ }
+
+ if (!isKeyword) printf("Identifier: %s\n", buffer);
+
+ } else if (isdigit(code[i])) {
+
+ // Collect number
+
+ j = 0;
+
+ while (isdigit(code[i])) buffer[j++] = code[i++];
+
+ buffer[j] = '\0';
+
+ printf("Number: %s\n", buffer);
+
+ } else if (strchr("+-*/=;", code[i])) {
+
+ // Operators and symbols
+
+ printf("Operator/Symbol: %c\n", code[i++]);
+
+ } else {
+
+ // Unknown character
+
+ printf("Unknown: %c\n", code[i++]);
+
+ }
+
+ }
+
+}
+
+int main() {
+
+ char code[256];
+
+ printf("Enter code: ");
+
+ fgets(code, 256, stdin);
+
+ analyze(code);
+
+ return 0;
