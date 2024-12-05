@@ -17,3 +17,15 @@ int main() {
  
  printf("Enter a variable name: ");
  scanf("%s", variable);
+if (isValidVariable(variable))
+
+ printf("\"%s\" is a valid variable name.\n", variable);
+
+ else
+
+ printf("\"%s\" is not a valid variable name.\n", variable);
+
+ return 0;
+
+}
+
