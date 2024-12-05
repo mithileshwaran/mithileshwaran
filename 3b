@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+int isValidVariable(char *name) {
+ // Check if the first character is valid (alphabet or underscore)
+ if (!isalpha(name[0]) && name[0] != '_')
+ return 0;
+ // Check the rest of the characters
+ for (int i = 1; name[i] != '\0'; i++) {
+ if (!isalnum(name[i]) && name[i] != '_')
+ return 0;
+ }
+ return 1;
+}
+int main() {
+ char variable[100];
+ 
+ printf("Enter a variable name: ");
+ scanf("%s", variable);
