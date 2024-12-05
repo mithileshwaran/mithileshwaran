@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main() {
+ int num;
+ float decimal;
+ char letter;
+ // Asking user for input
+ printf("Enter an integer: ");
+ scanf("%d", &num);
+ printf("Enter a floating-point number: ");
+ scanf("%f", &decimal);
+ printf("Enter a character: ");
+ scanf(" %c", &letter); // Notice the space before %c to avoid newline character issues
+ // Checking the type using sizeof
+ printf("\nChecking the types of entered values:\n");
+ // Type checking
+ printf("The type of num is: %s\n", (sizeof(num) == sizeof(int)) ? "int" : "unknown");
+ printf("The type of decimal is: %s\n", (sizeof(decimal) == sizeof(float)) ? "float" : "unknown");
+ printf("The type of letter is: %s\n", (sizeof(letter) == sizeof(char)) ? "char" : "unknown");
+ return 0;
+}
