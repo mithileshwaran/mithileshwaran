@@ -1,0 +1,805 @@
+lOMoARcPSD| 219 457 45
+PGP COLLEGE OF ENGINEERING ANDTECHNOLOGY
+NAMAKKAL – 637 207
+NAME : …………………………………………........................
+REG. NO : …………………………………………........................
+YEAR/SEM : …………………………………………........................
+BRANCH : …………………………………………........................
+lOMoARcPSD| 219 457 45
+PGP COLLEGE OF ENGINEERING AND TECHNOLOGY
+NAMAKKAL – 637 207
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING
+CERTIFICATE
+This is to certify that bonafide work done by Mr/Ms ………………………………………..
+Register Number .............................................. CCS356–Object Oriented Software Engineering
+Laboratory during the academic year 2024-2025(EvenSemester)
+Faculty In-Charge Head of Department
+Submitted for University Practical Examination held on
+INTERNAL EXAMINER EXTERNAL EXAMINER
+lOMoARcPSD| 219 457 45
+Table of Contents
+S.No
+Date
+Experiment Name
+Page No
+Marks
+Signature
+1
+11.02.2024
+Passport automation system.
+1
+2
+18.02.2024
+Book bank
+9
+3
+25.02.2024
+Exam registration
+18
+4
+03.03.2024
+Stock maintenance system.
+24
+5
+10.03.2024
+Online course reservation system
+29
+6
+17.03.2024
+Airline/Railway reservation system
+34
+7
+24.03.2024
+Software personnel management system
+41
+8
+24.03.2024
+Credit card processing
+46
+9
+06.04.2024
+e-book management system
+57
+10
+06.04.2024
+Recruitment system
+62
+11
+13.04.2024
+Foreign trading system
+68
+12
+13.04.2024
+Conference management system
+74
+13
+20.04.2024
+BPO management system
+80
+14
+27.04.2024
+Library management system
+88
+15
+04.05.2024
+Student information system
+92
+Average: /150
+1
+Ex. No: 1
+Date :
+PASSPORT AUTOMATION SYSTEM
+PROBLEM STATEMENT:
+To develop a Passport Automation System. The system developed should contain the following features:
+1. Passport Automation System is used in the effective dispatch of passport to all of the applicants. This system adopts a comprehensive approach to minimize the manual work and schedule resources, time in a cogent manner.
+2. The core of the system is to get the online registration form (with details such as name, address etc.,) filled by the applicant whose testament is verified for its genuineness by the Passport Automation System with respect to the already existing information in the database.
+3. This forms the first and foremost step in the processing of passport application. After the first round of verification done by the system, the information is in turn forwarded to the regional administrator's (Ministry of External Affairs) office.
+4. The application is then processed manually based on the report given by the system, and any forfeiting identified can make the applicant liable to penalty as per the law.
+5. The system forwards the necessary details to the police for its separate verification whose report is then presented to the administrator. After all the necessary criteria have been met, the original information is added to the database and the passport is sent to the applicant.
+.
+SOFTWARE REQUIRMENTS
+1. Argo UML
+HARDWARE REQUIRMENTS
+1.128MB RAM
+2. Pentium III Processor
+2
+USECASE DIAGRAM
+CLASS DIAGRAM
+3
+NEW REGISTRATION
+ACTIVITY DIAGRAM
+SEQUENCE DIAGRAM
+4
+COLLABORATION DIAGRAM
+CHECK STATUS
+ACTIVITY DIAGRAM
+5
+SEQUENCE DIAGRAM
+COLLABORATION DIAGRAM
+6
+ADMIN PANEL ACTIVITY DIAGRAM
+SEQUENCE DIAGRAM
+7
+COLLABORATION DIAGRAM
+COMPONENT DIAGRAM
+8
+DEPLOYMENT DIAGRAM
+Result:
+Thus passport automation system has been successfully executed using ArgoUML.
+9
+Ex. No: 2
+Date :
+PROBLEM STATEMENT:
+BOOK BANK
+To develop a Book bank management system. The system developed should contain the following features:
+ This system adopts a comprehensive approach to minimize the manual work and schedule.
+ The administrator should enter into the system using his/her personal username and password.
+ The administrator should provide query for outdated/damaged books/magazines etc.
+ The system checks for any damage for the particular book.
+ The system should display about the damaged books and also the outdated magazines.
+ The administrator should check and provides the action like verify, borrow, reserve, return books, notification of books through the system.
+ The library inventory involves the actions like add book and remove book.
+BOOK BANK MANAGING MODULE
+This use case starts when the librarian enters the system using his/her username and password.
+Flow of Events:
+Basic flow:
+ The use case starts when the librarian enters the system using his/her username and password to the system.
+ The administrator should provide query for outdated/damaged books/magazines etc.
+ The system checks for any damage for the particular book.
+ The system should display about the damaged books and also the outdated magazines.
+ The administrator should check and provides the action like verify,borrow,reserve,return books, notification of books through the system.
+ The library inventory involves the provides the actions like add book and remove book
+10
+Alternative flow:
+If the librarian doesn’t provide the correct valid username and password, then he/she application will not be able to enter or access the system.
+Pre-condition:
+None
+Post- condition:
+After completion of this use case, the information of the book bank management will be maintained by the system and stored in the system’s database.
+USECASE DIAGRAM
+add book
+11
+SEQUENCE DIAGRAM
+COLOBRATION DIAGRAM
+1: query for outdated/damagedbooks/maga
+2: check for damage
+5: delete
+3: display damaged book id
+4: delete
+inventory manager
+book info system
+12
+BOOK ISSUE
+2: check id
+5: update
+13
+BOOK RESERVATION
+2: check id
+7: reserve
+1: verify id
+4: book id
+6: request for reserve book librarian
+book bank info system
+3: valid user
+5: display unavailable
+14
+BOOK RETURN
+check id
+valid user
+enter boook id
+check for return date
+display time
+return book
+update
+check for reservation
+notify if reserve
+2: check id
+5: check for return date 8: update
+9: check for reservation
+1: verify id
+4: enter boook id 7: return book librarian
+book bank info system
+3: valid user
+6: display time 10: notify if reserve
+15
+CLASS DIAGRAM
+16
+ACTIVITY DIAGRAM
+verify id
+book id
+[ return book ]
+[ valid member ]
+[ invalid ]
+enter book id
+not a valid user
+update and check for fine
+[ book not available ]
+reserve book
+check for reserve
+[ book available ]
+issue book and update
+`
+17
+COMPONENT DIAGRAM
+DEPLOYMENT DIAGRAM
+Result:
+Thus book bank system has been successfully executed using ArgoUML
+SERVERSERVERSERVERSERVERSERVERSERVER
+REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER REGISTER DOWNLOADDOWNLOADDOWNLOAD DOWNLOADDOWNLOADDOWNLOADDOWNLOAD
+CLIENTCLIENTCLIENTCLIENTCLIENT
+DATABASEDATABASE DATABASEDATABASEDATABASEDATABASEDATABASE
+ORACLEORACLEORACLEORACLEORACLEORACLE
+18
+EX.NO:3 DATE :
+EXAM REGISTRATION
+PROBLEM STATEMENT
+To create an Exam registration software that will meet the needs of the applicant and help them in registering for the exam ,enquiry about the registered subject ,modification in database and cancellation for the registered project.
+OVERALL DESCRIPTION
+The Exam Registration System is an integrated system that has four modules as part of it. They
+are
+1. Registration for the exam
+In this module, the user can select the subject to register for the exam, Enquiry about the registered subject, Modification in the student database, canceling the registered subject
+2. Form for Registration
+In this module the user can apply for the exam by giving the details about the candidate and selecting the subject for the registration.
+3. Modification in the Database
+In this module the user can change the data’s like the phone number, address can be done.
+4. Cancellation for the registered subject
+In this module the user can cancel their name which is registered for the exam.
+SOFTWARE REQUIRMENTS
+1. ArgoUML
+HARDWARE REQUIRMENTS
+1.128MB RAM
+2. Pentium III Processor
+19
+USE CASE DIAGRAM
+20
+ACTIVITY DIAGRAM
+21
+CLASS DIAGRAM
+22
+SEQUENCE DIAGRAM:
+COLLABRATION DIAGRAM:
+8: can
+1: enter the datas 2: select the subject 3: apply for the exam
+6: note id student
+7: mo cel th
+dify e su databse
+23
+COMPONENT DIAGRAM
+DEPLOYMENT DIAGRAM:
+Result:
+Thus exam registration system has been successfully executed using ArgoUML registrationregistrationregistrationregistrationregistrationregistrationregistrationregistrationregistrationregistrationregistration registrationregistrationregistrationregistrationregistrationregistrationregistrationregistrationregistrationregistrationregistration
+24
+Ex. No.: 4
+Date :
+PROBLEM STATEMENT
+STOCK MAINTENANCE SYSTEM
+INVENTORY SYSTEM is a real time application used in the merchant’s day to day system. This is a database to store the transaction that takes places between the Manufacturer, Dealer and the Shop Keeper that includes stock inward and stock outward with reference to the dealer. Here we assume our self as the Dealer and proceed with the transaction as follows:
+The Manufacturer is the producer of the items and it contains the necessary information of the item such as price per item, Date of manufacture, best before use, Number of Item available and their Company name and address.
+The Dealer is the secondary source of an Item and he purchases Item from the manufacturer by requesting the required Item with its corresponding Company Name and the Number of Items required. The Dealer is only responsible for distribution of the Item to the Retailers in the Town or City.
+The Shop Keeper or Retailer is the one who is prime source for selling items in the market. The customers get Item from the Shop Keeper and not directly from the Manufacturer or the Dealer.
+The Stock is the database used in our System which records all transactions that takes place between the Manufacturer and the Dealer and the Dealer and the Retailer.
+25
+USECASE DIAGRAM
+CLASS DIAGRAM
+26
+ACTIVITY DIAGRAM
+27
+SEQUENCE DIAGRAM
+28
+COMPONENT DIAGRAM
+DEPLOYMENT DIAGRAM
+Result:
+Thus stock maintenance system has been successfully executed using ArgoUML
+29
+Ex. No: 5
+Date :
+ONLINE COURSE RESERVATION SYSTEM
+PROBLEM STATEMENT:
+ The course registration system will allow students to register for courses and view report cards from personal computers attached to the campus LAN as well as over the Internet. Professors will be able to access the system to sign up to teach courses as well as record grades.
+ The legacy system performance is rather poor, so the new system must ensure that access course information from the legacy database but will not update it. The registrar’s office will continue to maintain course information through another system.
+ At the beginning of each semester, students may request a course catalogue containing a list of course offerings for the semester. Information about each course, such as professor, department, and prerequisites, will be included to help students make informed decisions.
+ The new system will allow students to select four courses offering for the coming semester. In addition, each student will indicate two alternatives choices in case the student cannot be assigned to a primary selection. Course offerings will have a maximum of ten students and a minimum of three students. A course offering with fewer than three students will be canceled. For each semester, there is period of time that the students can change their schedule. Students must be able to access the system during this time to add or drop courses. Once the registration process is completed for a student, the registration system sends information to the billing system so the student can be billed for the semester. If a course fills up during the actual registration process, the student must be notified of the change before submitting the schedule for processing.
+ At the end of the semester, the student will be able to access the system to view an electronic report card. Since student grades are sensitive information, the system must employ extra security measures to prevent unauthorized access.
+30
+USECASE DIAGRAM
+CLASS DIAGRAM
+31
+ACTIVITY DIAGRAM
+32
+SEQUENCE DIAGRAM
+COLLABORATION DIAGRAM
+33
+COMPONENT DIAGRAM
+DEPLOYMENT DIAGRAM
+Result:
+Thus online course system has been successfully executed using ArgoUML
+34
+Ex. No: 6
+Date :
+e – TICKETING
+PROBLEM STATEMENT
+Railway Reservation System is a system used for booking tickets over internet. Any Customer Can book tickets for different trains. Customer can book a ticket only if the tickets are available. Customer searches for the availability of tickets then if the tickets are available he books the tickets by initially filling details in a form. Tickets can be booked in two ways by i- ticket or by e-ticket booking.
+In case of i-ticket booking customer can book the tickets online and the tickets are couriered to Particular customer at their address. But in case of e-ticket booking and cancelling tickets are booked and cancelled online sitting at the home and customer himself has to take print of the ticket but in both the cases amount for tickets are deducted from customers account.
+For cancellation of ticket the customer has to go at reservation office than fill cancellation form and ask the clerk to cancel the ticket than the refund is transferred to customer account. After booking ticket the customer has to checkout by paying fare amount to clerk.
+USECASE DIAGRAM
+35
+ACTIVITY DIAGRAM BOOKING TICKET
+36
+CANCEL TICKET
+37
+CLASS DIAGRAM
+38
+SEQUENCE DIAGRAM BOOKING TICKET
+COLLABORATION DIAGRAM
+39
+CANCEL TICKET
+COLLABORATION DIAGRAM
+40
+COMPONENT DIAGRAM
+DEPLOYMENT DIAGRAM
+Result:
+Thus e-ticket for railway reservation system has been successfully executed using ArgoUML
+41
+EX.NO:7 DATE :
+SOFTWARE PERSONNEL MANAGEMENT SYSTEM
+PROBLEM STATEMENT
+The software personnel management system is used to monitor the employee’s performance and his / her salary details. This system is very much useful to make the payments. The increments are also given to the employee’s through this system.
+OVERALL DESCRIPTION
+The three modules are
+Login
+The employee details, edit details and exit command buttons are present. We can choose the required command button.
+Pay slip form
+Fill in the form with details such as employee id, employee name, department, experience, and basic pay in the text boxes and submit using CALCULATE command button Update it in the database using UPDATE command button.
+Database form
+Updated database would be present. We can search for the required Pay details using SEARCH command button
+SOFTWARE REQURIEMENTS:
+1. ArgoUML
+HARDWARE REQURIMENTS:
+1. 128MB RAM
+2. Pentium III Processor 3.
+42
+USE CASE DIAGRAM
+43
+ACTIVITY DIAGRAM
+CLASS DIAGRAM
+44
+SEQUENCE DIAGRAM
+COMPONENT DIAGRAM
+45
+DEPLOYMENT DIAGRAM
+Result:
+Thus software personnel management system has been executed successfully using ArgoUML.
+46
+EX. No: 8
+Date :
+PROBLEM STATEMENT:
+CREDIT CARD PROCESSING
+To develop a Credit Card Processing system. The system developed should contain the following features:
+ The customer login into the system using credit card number and pin number. The system for validation.
+ The system queries the customer for type of accounts either SB account or credit. After getting the type of account the system shows the amount left.
+ The system then queries the customer for required amount. The user enters the amount and gets the money.
+OVERALL DESCRIPTION
+Login Module
+This case start the actor wishes to log into Course Registration System.
+Maintain Customer Information Module
+This use case starts when administrator wishes to add, change and/or delete customer information I system.
+Transaction Module
+This activity starts when customers want to withdraw amount from account.
+47
+USE CASE DIAGRAM:
+Login Module SEQUENCE DIAGRAM:
+48
+COLLABORATION DIAGRAM:
+CLASS DIAGRAM:
+49
+ACTIVITY DIAGRAM:
+[ withwithwith entryentryentry ]
+[ not withwithwith entryentryentry ]
+enter your id enter your id enter your id enter your id enter your id enter your id enter your id enter your id enter your id enter your id and passwordpasswordpasswordpasswordpasswordpasswordpasswordpassword
+dont enterenterenterenterenter
+[ id is incorrectincorrectincorrectincorrectincorrect incorrectincorrectincorrect ]
+[ id [ id[ id is correct correct correct correct correct correct ]
+invalidinvalidinvalidinvalidinvalidinvalidinvalid id and passwordpasswordpasswordpasswordpasswordpasswordpasswordpassword
+enterenterenterenterenter intointointointo the the the the systemsystemsystemsystemsystemsystem
+cancelcancelcancelcancelcancelcancel loginloginloginloginlogin
+[ re -enterenterenterenterenter ]
+[ cancelcancelcancelcancelcancelcancel ]
+cancelcancelcancelcancelcancelcancel thethethe login processprocessprocessprocessprocessprocessprocess
+50
+Maintain Customer Information Module SEQUENCE DIAGRAM:
+51
+COLLABORATION DIAGRAM:
+CLASS DIAGRAM:
+52
+ACTIVITY DIAGRAM:
+specify the function
+add a customer
+Update a customer
+Delete a customer
+Enter the customer information
+Enter the credit number
+Credit number is entered
+Customer is added
+[Number is valid]
+[Number is invalid]
+[Number is valid]
+[Number is invalid]
+Display customer information
+Number is invalid
+Display the customer information
+It is invalid
+Update the information of the customer
+[Confirm ]
+[Not confirm]
+Verify the deletion
+Not delete
+Delete the customer
+Save the changes
+53
+Transaction Module SEQUENCE DIAGRAM:
+COLLABORATION DIAGRAM:
+54
+CLASS DIAGRAM:
+ACTIVITY DIAGRAM:
+enter the credit number and pin number
+[ number is valid ] [number is invalid]
+information is displayed
+invalid number
+enter the amount to be withdraw
+[ <balance ] [ >balance ]
+return the money
+entered more than your amount
+55
+COMPONENT DIAGRAM:
+STATECHART DIAGRAM:
+idle
+inserting credit card
+requesting for credit card number
+entering PIN number
+validating card number
+performing transcation
+transcation log record saving
+completing transcation
+removing credit card
+56
+DEPLOYMENT DIAGRAM:
+Result:
+Thus credit card processing system has been executed successfully using ArgoUML.
+57
+Ex. No: 9
+Date :
+PROBLEM STATEMENT
+e – BOOK MANAGEMENT SYSTEM
+This software is totally self contained and works relatively an efficient on the package relates to the software. It provides simple database rather than complex one for high requirement and it provides a good and easy graphical user interface to both new and naïve as well as experienced user of the computer.
+OVERALL DESCRIPTION REGISTER
+The register module contains the application form or registration form which contains following details. Name, Address, Contact number, E-mail id, Password etc.
+LOGIN
+The Login module contains the form which contain membership name and member password. It includes Username and Password.
+SEARCH BOOK
+The search book module contain list of books, from this list we search for the book which we need. This also contains another field called as categories where can select the category of the book.
+DOWNLOAD
+The download module contains the downloading option for where purpose where we can download, whatever ebook we search and found.
+PAYMENT
+After the book is searched and found. Then the user is going to download the book. Before the downloading the books needs payment for that book. So user has to select the type of transaction whether credit card (or) debit card (or) cash (or) cheque (or) DD.
+SALES RECORD
+The website admin has to maintain the sales record where the record should be in updated, where how many books are sold. How much amount credited and names of user who downloaded that book and how much they paid for downloading the book.
+UPDATE
+The update module should maintained by the website administrator. The admin should update each and every process like.
+ Number of user registered
+ Registered user viewing.
+ Downloading by user.
+58
+ Payment offered by user.
+USE CASE DIAGRAM
+CLASS DIAGRAM
+59
+ACTIVITY DIAGRAM
+60
+SEQUENCE DIAGRAM
+1. Visitor
+2. REGISTERED USER
+61
+COLLABORATION DIAGRAM
+COMPONENT DIAGRAM
+DEPLOYMENT DIAGRAM
+Result:
+Thus e-book management system has been executed successfully using ArgoUML.
+62
+EX.NO:10
+DATE :
+RECRUITMENT SYSTEM
+PROBLEM STATEMENT
+To create a software system this can test the skills of the candidate by generating random
+question and answer and implementing using Visual basic 6.0 and MS Access.
+OVERALL DESCRIPTION
+The three modules are.
+1. Login
+User can login using the username and password and they can start attend the
+test for the specified vacancy
+2. Recruitment test
+This system will generate random question to test the skills of the Candidate
+and check whether the candidate is suitable for the position offered by the
+company.
+3. Result
+This will show whether the candidate is selected or not selected for the position
+by displaying the message.
+SOFTWARE REQURIEMENTS
+1. ArgoUML
+HARDWARE REQURIMENTS
+1. 128MB RAM
+2. Pentium III Processor
+63
+USE CASE DIAGRAM
+ACTIVITY DIAGRAM
+64
+CLASS DIAGRAM
+65
+SEQUENCE DIAGRAM
+66
+COLLABORATION DIAGRAM
+COMPONENT DIAGRAM
+DEPLOYMENT DIAGRAM
+67
+Result:
+Thus recruitment system has been executed successfully using ArgoUML.
+68
+Ex. No: 11
+Date :
+PROBLEM STATEMENT
+FOREIGN TRADING SYSTEM
+ The steps involved in Foreign Trading System are:
+ The trading system begins its process by getting the username and password from the trader.
+ After the authorization permitted by the administrator, the trader is allowed to perform the
+sourcing to know about the commodity details.
+ After the required commodities are chosen, the trader places the order.
+ The administrator checks for the availability for the required commodities and updates it in the
+database.
+ After the commodities are ready for the trade, the trader pays the amount to the administrator.
+ The administrator in turn provides the bill by receiving the amount and updates it in the database.
+ The trader logouts after the confirmation message has been received.
+OVERALL DESCRIPTION
+TRADER : Person who trades for the commodities.
+ADMINISTRATOR : One who coordinates the entire trading process.
+DATABASE : All the transaction details are stored here.
+READER : Person who is viewing the website.
+USER : The traders and the viewers are the users.
+69
+USE CASE DIAGRAM
+70
+CLASS DIAGRAM
+71
+SEQUENCE DIAGRAM
+COLLABORATION DIAGRAM
+72
+ACTIVITY DIAGRAM
+COMPONENT DIAGRAM
+73
+DEPLOYMENT DIAGRAM
+Result:
+Thus foreign trading systemhas been executed successfully using ArgoUML.
+74
+EX.NO:12
+DATE :
+CONFERENCE MANAGEMENT SYSTEM
+PROBLEM STATEMENT:
+This project deals with the conference management system .As a students or staff members are
+required to view the details of conference is going to conduct in various colleges or institutions and to
+attend the conference to gain knowledge from the conferences. Administrator will add the details about
+the various conferences available to attend for various department students and staff members.
+User will enter into the system by giving the username and password and selection form will be
+displayed for the user from that department should be selected and depending up on the department the
+conference management system will show the details of the conferences in various place using Ms
+Access and Visual basic 6.0.
+OVERALL DESCRIPTION
+1. Login Form:
+Authenticate the user and administrator.
+2. Department Selection Form:
+This form will give the options for selecting the department to get knowledge about the
+conference.
+3. Conference view Form:
+This form contains the details about the conferences is conducting by various institutions and we
+can see the date and time for the conference.
+4. Database Form:
+The details about the conferences going to conduct by various institutions. Administrator can add
+the details about the conference for the students and also for the staff members.
+SOFTWARE REQURIEMENTS:
+1. ArgoUML
+75
+HARDWARE REQURIMENTS:
+1. 128MB RAM
+2. Pentium III Processor
+STRUCTURE OF DATABASE:
+Create a table “conf” using Microsoft access with the following attributes:
+S.NO FIELD TYPE SIZE
+1. dname varchar 20
+2. conferdet varchar 40
+3. collname varchar 20
+4. date Text 10
+5. time Text 05
+USE CASE DIAGRAM:
+76
+ACTIVITY DIAGRAM:
+CLASS DIAGRAM:
+77
+SEQUENCE DIAGRAM:
+78
+COLLABRATION DIAGRAM:
+COMPONENT DIAGRAM:
+79
+DEPLOYMENT DIAGRAM:
+Result:
+Thus conference management system has been executed successfully using ArgoUML.
+80
+Ex. No: 13
+Date :
+PROBLEM STATEMENT:
+BPO MANAGEMENT SYSTEM
+To develop a BPO Management System. The system developed should contain the following features:
+ This system adopts a comprehensive approach to minimize the manual work and schedule
+resources, time in a cogent manner.
+ The client places a project order to the system and also providing the requirements for the
+particular project.
+ The BPO employee enters into the system and selects the project.
+ The employee classifies the project into voice and on voice based mode.
+ Then the same project into classified into outsourcing service type(IT/SOFTWARE,
+BACKOFFICE/ACCOUNTING/FINANCIAL/KLNOWLEDGE BASED).
+ The BPO employee processes the project and finally submits the project.
+ The project is delivered to the client if the payments are received.
+PROJECT PROCESSING MODULE
+This use case starts when the client places the order to the BPO management system..
+Flow of Events:
+Basic flow:
+The use case starts when the client places a project order to the system and also providing the
+requirements for the particular project. The BPO employee enters into the system and selects the project.
+The employee classifies the project into voice and on voice based mode.
+Then the same project into classified into outsourcing service type like:
+ IT/SOFTWARE
+ CUSTOMER INTERACTION
+ BACKOFFICE
+ ACCOUNTING
+ FINANCIAL
+ KNOWLEDGE BASED.
+81
+The BPO employee processes the project and finally submits the project. The project is delivered to the
+client if the payments are received.
+Alternative flow:
+If the BPO employee doesn’t classify the service type into voice or non voice based mode, then
+error occurs and the project cannot be processed.
+Pre-condition:
+None
+Post- condition:
+After completion of this use case, the information of the Client and project will be maintained by the
+system.
+USECASE DIAGRAM
+Order placed by client
+Delivary
+82
+SEQUENCE DIAGRAM
+1. client place an order
+2. employee login
+3. select voice/non voiced based service
+4. select out souring rype service(IT/ S/W,cust interaction backoffice,finance)
+5. submit project
+6. payment request
+7. payment done
+8. delivary of project
+client BPO cmp/org
+83
+COLLABORATION DIAGRAM
+5: submit the work
+4: select outsourcing service type
+3: select voice/non voice
+2: employee login
+7: payment done
+1: place an order
+6: payment request
+8: delivery of the project
+CLASS DIAGRAM
+Client BPO
+emp/Org
+84
+ACTIVITY DIAGRAM:
+place an order
+BPO emp login
+Service selection( voice )
+voice/non-voice
+based
+Outsouring type
+cust interaction/
+IT/S/w/finace/banking/data service
+submit work
+delivary action
+If payment service
+hand over
+85
+swing
+PACKAGE DIAGRAM
+COMPONENT DIAGRAM:
+BPO client
+employer
+86
+STATECHART DIAGRAM
+sending the order to BPO org
+placing order by client selecting voice/non voice
+service
+classifying service
+Selecting BPO service
+outsourcing type
+complete submit the project
+Submitting the project
+payment if receiver
+publishing
+paper
+DEPLOYMENT DIAGRAM
+client
+BPO system
+project server type
+outsourcing type
+database
+oracle
+87
+Result:
+Thus BPO management system has been executed successfully using ArgoUML.
+88
+Ex. No: 14
+Date :
+LIBRARY MANAGEMENT SYSTEM
+PROBLEM STATEMENT
+The library management system is a software system that issues books and magazines to
+registered students only. The student has to login after getting registered to the system. The
+borrower of the book can perform various functions such as searching for desired book, get the
+issued book and return the book.
+CLASS DIAGRAM
+A class diagram in the unified modeling language is a type of static structure diagram that
+describes the structure of a system by showing the system’s classes, their attributes, operations
+and the relationships among objects. The library management system makes use of the
+following classes
+89
+USE CASE DIAGRAM
+login
+<<actor>>
+projection of
+user
+issue book
+return book
+maintain database
+DBA
+90
+DEPLOYMENT DIAGRAM
+COMPONENT DIAGRAM
+Library management
+system
+user
+librarian DBA
+91
+COLLABORATION DIAGRAM
+SEQUENCE DIAGRAM
+RESULT
+Thus the various UML diagrams for library management system were
+drawn successfully.
+92
+Ex. No: 14
+Date :
+STUDENT INFORMATION SYSTEM
+PROBLEM STATEMENT
+The student information system is a software system that collects details of the students
+only. The student has to login after getting registered to the system. The Administrator can
+perform various functions such as searching for desired book, get the issued book and return
+the book.
+CLASS DIAGRAM
+A class diagram in the unified modeling language is a type of static structure diagram that
+describes the structure of a system by showing the system’s classes, their attributes,
+operations and the relationships among objects. The library management system makes use of
+the
+USE CASE DIAGRAM:
+93
+DEPLOYMENT DIAGRAM
+94
+COMPONENT DIAGRAM
+95
+COLLABORATION DIAGRAM
+SEQUENCE DIAGRAM
+RESULT
+Thus the various UML diagrams for library management system were
+drawn successfully.
