@@ -1,0 +1,56 @@
+<!-- Main.html -->
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Image Maps</h2>
+<p>Click on the computer, the phone, or the cup of coffee to go to a new page and read more about
+the topic:</p>
+<imgsrc="workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
+<map name="workmap">
+<area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+<area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+<area shape="circle" coords="337,300,44" alt="Cup of coffee" href="coffee.htm">
+</map>
+</body>
+</html>Workplace.jpg
+
+<!--Computer.html-->
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Computer</h2>
+<p>A computer is a machine that can be programmed to automatically carry out sequences of
+arithmetic or logical operations (computation). Modern digital electronic computers can perform
+generic sets of operations known as programs. These programs enable computers to perform a
+wide range of tasks. </p>
+</body>
+</html>
+
+<!--Phone.html-->
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Mobile</h2>
+<p>A mobile phone, or cell phone,[a] is a portable telephone that allows users to make and receive
+calls over a radio frequency link while moving within a designated telephone service area, unlike
+fixed-location phones (landline phones). This radio frequency link connects to the switching
+systems of a mobile phone operator, providing access to the public switched telephone network
+(PSTN). Modern mobile telephony relies on a cellular network architecture, which is why mobile
+phones are often referred to as 'cell phones' in North America.</p></body>
+</html>
+
+<!--coffee.htm-->
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Coffee</h2>
+<p>Coffee is a beverage brewed from roasted, ground coffee beans. Darkly colored, bitter, and
+slightly acidic, coffee has a stimulating effect on humans, primarily due to its caffeine content, but
+decaffeinated coffee is also commercially available. There are also various coffee substitutes.
+Typically served hot, coffee has the highest sales in the world market for hot drinks</p>
+</body>
+</html>
