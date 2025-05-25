@@ -1,0 +1,28 @@
+Step 1: We need to first install the Tomcat 10 zip file from this website. On the website, select the 64-bit
+Windows zip (PGP, sha512) in the Core section to start the download process for the Tomcat zip file.
+Step 2: Check If JDK Is Installed. Open Command Prompt and enter the following commands
+java -version
+javac –versionIf JDK is not installed on your computer, install JDK. In the above picture, we can see JDK is already
+installed on our computer.
+Step 3: Unzip Tomcat 10 Zip File. Go to the location where you have downloaded the Tomcat 10 zip
+file. Right-click on the apache tomcat file place the cursor on 7-Zip and click on Extract Here to extract
+the folder.
+Step 4: Creating JAVA_HOME Variable. Click Start then in the search bar, search for “Edit the system
+environment variables” and click on it. The following System Properties box will open. Select
+Environment Variables in the box.On clicking Environment Variables the following box will open.
+Step 5: We have to create a JAVA_HOME variable and insert the path of the JDK file stored in our
+computer, which will be shown below. So select New from the System variables in the above picture. A
+New System Variable box will be opened where we will have to fill in the Variable name and Variable
+value.Step 6: Go to the location where you have stored the contents of the JDK file in My Computer or PC. Copy
+the root path of the location of the JDK file as shown below.
+Step 7: Paste the JDK path from the above picture into the Variable value field and in the Variable name
+field, give the name JAVA_HOME as shown below.Step 8: Check the Working of Tomcat. Open the extracted apache tomcat file. We will see all the
+following files in them. Among them open the batch file named “startup”.
+StepBy default, the server port number is 8080.
+Output:
+Step 10: Successful Installation of Tomcat. Our next step is to open an internet browser like Google
+and type in the address
+http://localhost:8080
+Then click enter and the following browser will appear suggesting the successful installation of Apache
+Tomcat.RESULT:
+Thus the Tomcat server is installed and configured successfully
