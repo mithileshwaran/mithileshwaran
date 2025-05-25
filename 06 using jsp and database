@@ -1,0 +1,156 @@
+ExamServer.jsp:
+<%@page contentType="text/html" language="java" import="java.sql.*"%>
+<html>
+<head>
+<title>Online Exam Server</title>
+<style type="text/css">
+body{background-color:black;font-family:courier;color:blue}
+</style>
+</head>
+<body>
+<h2 style="text-align:center">ONLINE EXAMINATION</h2>
+<p>
+<a href="ExamClient.html">Back To Main Page</a>
+</p>
+<hr/>
+<%
+String str1=request.getParameter("ans1");String str2=request.getParameter("ans2");
+String str3=request.getParameter("ans3");
+int mark=0;
+Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+Connection con=DriverManager.getConnection("jdbc:odbc:examDS");
+Statement stmt=con.createStatement();
+ResultSet rs=stmt.executeQuery("SELECT * FROM examTab");
+int i=1;
+while(rs.next())
+{
+if(i==1)
+{
+String dbans1=rs.getString(1);
+if(str1.equals(dbans1))
+{
+mark=mark+5;
+}
+}
+if(i==2)
+{
+String dbans2=rs.getString(1);
+if(str2.equals(dbans2))
+{
+mark=mark+5;
+}
+}
+if(i==3)
+{
+String dbans3=rs.getString(1);
+if(str3.equals(dbans3))
+{
+mark=mark+5;
+}
+}
+i++;
+}
+if(mark>=10)
+{
+out.println("<h4>Your Mark Is : "+mark+"</h4>");
+out.println("<h3>Congratulations....! You Are Eligible For The Next Round...</h3>");}
+else
+{
+out.println("<h4>Your Mark is : "+mark+"</h4>");
+out.println("<h3>Sorry....!! You Are Not Eligible For The Next Round...</h3>");
+}
+%>
+</form>
+</body>
+</html>
+ExamClient.HTML:
+<html>
+<head>
+<title>Online Exam Client</title>
+<style type="text/css">
+body{background-color:black;font-family:courier;color:blue}
+</style>
+</head>
+<body>
+<h2 style="text-align:center">ONLINE EXAMINATION</h2>
+<h3>Answer the following questions (5 marks for each correct answer)</h3>
+<hr/>
+<form name="examForm" method="post" action="ExamServer.jsp">
+1. All computers must have <br/>
+<input type="radio" name="ans1" value="Operating System">Operating System
+<input type="radio" name="ans1" value="Application Software">Application Software
+<input type="radio" name="ans1" value="CD Drive">CD Drive
+<input type="radio" name="ans1" value="Microsoft word">Microsoft word
+<br/><br/>
+2. The term PC means <br/>
+<input type="radio" name="ans2" value="Private Computer">Private Computer
+<input type="radio" name="ans2" value="Professional Computer">Professional Computer
+<input type="radio" name="ans2" value="Personal Computer">Personal Computer
+<input type="radio" name="ans2" value="Personal Calculator">Personal Calculator
+<br/><br/>
+3.C was developed by?<br/>
+<input type="radio" name="ans3" value="Dennis Ritchie">Dennis Ritchie
+<input type="radio" name="ans3" value="Stroustrup">Stroustrup
+<input type="radio" name="ans3" value="David Ritchie">David Ritchie
+<input type="radio" name="ans3" value="Charles Babbage">Charles Babbage<br/><br/>
+<input type="submit" value="Check Your Result"/>
+</form>
+</body>
+</html>
+Displaying Student Mark List
+marklist.jsp:
+<%@ page contentType="text/html" language="java" import="java.sql.*"%>
+<html>
+<head>
+<title>Three Tier Application</title>
+<style type="text/css">
+body{color:blue;font-family:courier;text-align:center}
+</style>
+</head>
+<body>
+<h2>EXAMINATION RESULT</h2><hr/>
+<%
+String str=request.getParameter("regno");
+Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+Connection con=DriverManager.getConnection("jdbc:odbc:markDS");
+Statement stmt=con.createStatement();
+ResultSet rs=stmt.executeQuery("SELECT*FROM markTab WHERE rno="+str);
+while(rs.next())
+{
+%>
+Register No:<%=rs.getObject(1)%><br/>
+Name:<%=rs.getObject(2)%><br/>
+<table border="1">
+<th>SUBJECT</th><th>Mark</th>
+<tr><td>Network Programming and Management</td><td><%=rs.getObject(3)%></td></tr>
+<tr><td>Object Oriented Analysis and Design</td><td><%=rs.getObject(4)%></td></tr>
+<tr><td>Cryptography and Network Security</td><td><%=rs.getObject(5)%></td></tr>
+<tr><td>Embedded Systems</td><td><%=rs.getObject(6)%></td></tr>
+<tr><td>Web Technology</td><td><%=rs.getObject(7)%></td></tr>
+<tr><td>Software Requirement and Engineering</td><td><%=rs.getObject(8)%></td></tr></table>
+<%
+}
+%>
+<br/>
+<a href="stud.html">Back</a>
+</body>
+</html>
+stud.HTML:
+<html>
+<head>
+<title>Three Tier Application</title>
+<style type="text/css">
+body{color:blue;font-family:courier;text-align:center}
+</style>
+</head>
+<body>
+<h2>EXAMINATION RESULT</h2><hr/>
+<form name="f1" method"GET" action="marklist.jsp">
+Enter Your Reg.No:
+<input type="text" name="regno"/><br/><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="submit" value="SUBMIT"/>
+</form>
+</body>
+<html>
