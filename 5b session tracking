@@ -1,0 +1,236 @@
+Step 1: Create the Dynamic Web Project
+Create a new Dynamic Web Project using Eclipse. After creating the project, the file structure should look like
+the following:
+Step 2: Create the LoginServlet Class
+File: LoginServlet.java:
+package com.example;
+import java.io.IOException;
+importimport jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+public class LoginServlet extends HttpServlet {
+private static final long serialVersionUID = 1L;
+/**
+* Handles POST requests for user login.
+*
+* @param request HttpServletRequest object containing request details
+* @param response HttpServletResponse object to send response
+* @throws ServletException If an error occurs during request processing
+* @throws IOException If an I/O error occurs
+*/
+protected void doPost(HttpServletRequest request, HttpServletResponse response)
+throws ServletException, IOException {
+String username = request.getParameter("username");
+String password = request.getParameter("password");
+if ("admin".equals(username) && "password".equals(password)) {
+HttpSession session = request.getSession();
+session.setAttribute("username", username);
+response.sendRedirect("dashboard");
+} else {
+response.sendRedirect("login.jsp");
+}
+}
+}
+This servlet handles login requests. If the username and password match "admin" and "password," it creates
+a session and redirects to the dashboard. Otherwise, it redirects back to the login page.
+Step 3: Create the DashboardServlet Class
+File: DashboardServlet.java:
+package com.example;
+import java.io.IOException;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+importimport jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+public class DashboardServlet extends HttpServlet {
+private static final long serialVersionUID = 1L;
+/**
+* Handles GET requests to the dashboard page.
+*
+* @param request HttpServletRequest object containing request details
+* @param response HttpServletResponse object to send response
+* @throws ServletException If an error occurs during request processing
+* @throws IOException If an I/O error occurs
+*/
+protected void doGet(HttpServletRequest request, HttpServletResponse response)
+throws ServletException, IOException {
+HttpSession session = request.getSession(false);
+if (session == null || session.getAttribute("username") == null) {
+response.sendRedirect("login.jsp");
+} else {
+request.getRequestDispatcher("dashboard.jsp").forward(request, response);
+}
+}
+}
+This servlet handles requests to the dashboard page. It checks if a session exists and if the username is set. If
+not, it redirects to the login page; otherwise, it forwards the request to the dashboard page.
+Step 4: Create the LogoutServlet Class
+File: LogoutServlet.java:
+package com.example;
+import java.io.IOException;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+public class LogoutServlet extends HttpServlet {
+private/**
+* Handles POST requests to log out the user.
+*
+* @param request HttpServletRequest object containing request details
+* @param response HttpServletResponse object to send response
+* @throws ServletException If an error occurs during request processing
+* @throws IOException If an I/O error occurs
+*/
+protected void doPost(HttpServletRequest request, HttpServletResponse response)
+throws ServletException, IOException {
+HttpSession session = request.getSession(false);
+if (session != null) {
+session.invalidate();
+}
+response.sendRedirect("logout.jsp");
+}
+}
+This servlet handles logout requests. It invalidates the session and redirects to the logout page.
+Step 5: Create the Login Page
+File: login.jsp:
+<%@ page language="java" contentType="text/html; charset=UTF-8" %>
+<html>
+<head>
+<title>Login</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+<h2>Login</h2>
+<form action="login" method="post">
+<input type="text" name="username" placeholder="Enter Username" required>
+<input type="password" name="password" placeholder="Enter Password" required>
+<input type="submit" value="Login"> <!-- Button text is "Login" -->
+</form>
+</div>
+</body>
+</html>
+This JSP page provides a form for users to enter their username and password. The form submits a POST
+requestStep 6: Create the Dashboard Page
+File: dashboard.jsp:
+<%@ page language="java" contentType="text/html; charset=UTF-8" %>
+<%@ page session="true" %>
+<%
+String username = (String) session.getAttribute("username");
+if (username == null) {
+response.sendRedirect("login.jsp");
+return;
+}
+%>
+<html>
+<head>
+<title>Dashboard</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+<h2>Welcome, <%= username %>!</h2>
+<p>This is your dashboard.</p>
+<form action="logout" method="post">
+<input type="submit" value="Logout">
+</form>
+</div>
+</body>
+</html>
+This JSP page displays a welcome message to the logged-in user. If the session is invalid or the username is
+not set, it redirects to the login page. Otherwise, it shows the dashboard and provides a logout button.
+Step 7: Create the Logout Page
+File: logout.jsp:
+<%@ page language="java" contentType="text/html; charset=UTF-8" %>
+<html>
+<head>
+<title>Logout</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+<h2<a href="login.jsp">Login again</a>
+</div>
+</body>
+</html>
+This JSP page informs the user that they have successfully logged out and provides a link to log in again.
+Step 8: Create the StyleSheet
+File: style.css:
+body {
+background-color: #f0f8f7;
+font-family: Arial, sans-serif;
+}
+.container {
+width: 30%;
+margin: 100px auto;
+background-color: #d8f3dc;
+border-radius: 10px;
+padding: 20px;
+box-shadow: 0px 0px 10px #333;
+}
+h2 {
+color: #40916c;
+text-align: center;
+}
+input[type="text"], input[type="password"], input[type="submit"] {
+width: 100%;
+padding: 10px;
+margin: 10px 0;
+border: 1px solid #ddd;
+border-radius: 5px;
+}
+input[type="submit"] {
+background-color: #40916c;
+color: #fff;
+border: none;
+}This CSS file styles the JSP pages. It includes styling for the background, container, headers, and form
+elements.
+Step 9: Configure the web.xml
+File: web.xml:
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
+<display-name>SessionTrackingExample</display-name>
+<welcome-file-list>
+<welcome-file>index.html</welcome-file>
+<welcome-file>index.jsp</welcome-file>
+<welcome-file>index.htm</welcome-file>
+<welcome-file>default.html</welcome-file>
+<welcome-file>default.jsp</welcome-file>
+<welcome-file>default.htm</welcome-file>
+</welcome-file-list>
+<servlet>
+<servlet-name>LoginServlet</servlet-name>
+<servlet-class>com.example.LoginServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>LoginServlet</servlet-name>
+<url-pattern>/login</url-pattern>
+</servlet-mapping>
+<servlet>
+<servlet-name>DashboardServlet</servlet-name>
+<servlet-class>com.example.DashboardServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>DashboardServlet</servlet-name>
+<url-pattern>/dashboard</url-pattern>
+</servlet-mapping>
+<servlet>
+<servlet-name>LogoutServlet</servlet-name>
+<servlet-class>com.example.LogoutServlet</servlet-class>
+</servlet><servlet-mapping>
+<servlet-name>LogoutServlet</servlet-name>
+<url-pattern>/logout</url-pattern>
+</servlet-mapping>
+<session-config>
+<session-timeout>30</session-timeout> <!-- Timeout in minutes -->
+</session-config>
+</web-app>
+This configuration file maps the servlets to their respective URL patterns. It tells the server which servlet to
+use for each URL pattern.
+Step 10: Run the Project
+Output:
+1. Login Page:
+2. Dashboard:3. Logout page:
