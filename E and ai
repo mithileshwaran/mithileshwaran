@@ -1,0 +1,26 @@
+from sklearn.datasets import fetch_openml
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
+
+# Load dataset (Adult Income dataset)
+data = fetch_openml(data_id=1590, as_frame=True)
+df = data.frame.dropna()
+df = df[df['race'].isin(['White', 'Black'])]
+df['income'] = (df['class'] == '>50K').astype(int)
+
+# Features and labels
+X = pd.get_dummies(df[['age', 'education-num', 'hours-per-week']], drop_first=True)
+y = df['income']
+sensitive = df['race']
+
+# Split data
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+# Train model
+model = LogisticRegression(max_iter=1000)
+model.fit(X_train, y_train)
+
+# Predict and evaluate
+y_pred = model.predict(X_test)
+print("Accuracy:", accuracy_score(y_test, y_pred))
