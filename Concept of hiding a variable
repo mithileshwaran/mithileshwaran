@@ -1,0 +1,15 @@
+class W
+{
+	int i=12;
+}
+class X extends W
+{
+	int i=24;
+}
+class wx
+{
+	public static void main(String[] args)
+{
+	X obj=new X();
+	System.out.println("Value of i in class X:"+obj.i);
+}}
